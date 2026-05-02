@@ -1,0 +1,372 @@
+/* ==========================================================
+   1. RESET & BASE STYLES
+   ========================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Menambahkan background gambar */
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #0f0f0f;
+    color: #cecece;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Container utama agar semi-transparan dan teks terbaca jelas */
+.main-container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    background: rgba(20, 20, 20, 0.97);
+    min-height: 100vh;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+}
+
+/* ==========================================================
+   2. HEADER & LOGO
+   ========================================================== */
+.site-header {
+    background: #111;
+    padding: 15px 20px;
+    border-bottom: 1px solid #222;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Diperlukan untuk memposisikan logo absolut */
+    min-height: 100px; /* Menyesuaikan tinggi logo agar tidak terpotong */
+    width: 100%;
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.logo img {
+    max-height: 80px; /* Sesuaikan dengan tinggi gambar logomu */
+    width: auto;
+    display: block;
+}
+
+/* Panel User digeser ke kanan */
+.user-panel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #bbb;
+    font-size: 0.85rem;
+    margin-left: auto; /* Mendorong ke kanan */
+}
+
+.user-panel .add-btn {
+    background: #ff9800;
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ==========================================================
+   3. NAVIGASI (SITE NAV)
+   ========================================================== */
+.site-nav {
+    background: #1a1a1a;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ff9800;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: #ff9800;
+}
+
+.search-container input {
+    background: #111;
+    border: 1px solid #333;
+    padding: 6px 14px;
+    border-radius: 20px;
+    color: #cecece;
+    font-size: 0.8rem;
+    width: 160px;
+    transition: border-color 0.2s;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #ff9800;
+}
+
+/* ==========================================================
+   4. LAYOUT DUA KOLOM
+   ========================================================== */
+.layout-container {
+    display: grid;
+    grid-template-columns: 70% 28%;
+    gap: 2%;
+    padding: 30px 20px;
+    width: 100%;
+}
+
+.main-content {
+    width: 100%;
+}
+
+.sidebar {
+    width: 100%;
+    background: #1a1a1a;
+    padding: 20px;
+    border: 1px solid #282828;
+    border-radius: 4px;
+    height: fit-content;
+}
+
+/* ==========================================================
+   5. KONTEN UTAMA & GUIDE ITEM
+   ========================================================== */
+.main-content h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.guide-item {
+    background: #222;
+    padding: 18px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border-left: 4px solid #444;
+    transition: all 0.2s ease-in-out;
+}
+
+.guide-item:hover {
+    border-left-color: #ff9800;
+    background: #272727;
+}
+
+.guide-item h3 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin: 8px 0 6px 0;
+}
+
+.guide-item p {
+    color: #aaa;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.guide-item small {
+    color: #666;
+    font-size: 0.75rem;
+}
+
+/* ==========================================================
+   6. SIDEBAR REKOMENDASI
+   ========================================================== */
+/* Sidebar Rekomendasi dengan Pembatas dan Efek Hover */
+.sidebar {
+    background: #1a1a1a;
+    padding: 20px;
+    border: 1px solid #282828;
+    border-radius: 4px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: #ff9800;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 6px;
+}
+
+/* Kotak item dengan garis pembatas (border) */
+.recommendation-item {
+    background: #222;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Efek interaktif saat kursor digerakkan ke atas konten rekomendasi */
+.recommendation-item:hover {
+    border-color: #ff9800;
+    background: #272727;
+    transform: translateY(-2px);
+}
+
+.recommendation-item img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #444;
+}
+
+.recommendation-item h4 {
+    color: #e0e0e0;
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+    line-height: 1.3;
+}
+
+.recommendation-item p {
+    color: #888;
+    font-size: 0.72rem;
+    line-height: 1.4;
+}
+
+/* ==========================================================
+   7. BADGE / TAG
+   ========================================================== */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-weight: bold;
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+
+.badge-exploit { background: #d32f2f; color: #fff; }
+.badge-mod { background: #388e3c; color: #fff; }
+.badge-difficulty { background: #1976d2; color: #fff; }
+
+/* ==========================================================
+   8. FOOTER
+   ========================================================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 0.75rem;
+}
+
+/* Styling Dropdown Navigation */
+.nav-links {
+    position: relative;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1f1f1f;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    border-top: 2px solid #ff9800;
+    list-style: none;
+    padding: 5px 0;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.nav-links li .dropdown li a {
+    display: block;
+    padding: 10px 15px;
+    color: #ccc;
+    font-size: 0.75rem;
+    text-transform: none;
+}
+
+.nav-links li .dropdown li a:hover {
+    background: #ff9800;
+    color: #000;
+}
+
+/* Menghilangkan underline bawaan pada link rekomendasi */
+.recommendation-item-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo img { max-height: 50px;
+    width: auto;
+    display: block;}
+
+/* Menyesuaikan lebar dan posisi dropdown */
+.nav-links li {
+    position: relative;
+}
+
+.nav-links .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #151515;
+    border: 1px solid #333;
+    min-width: 220px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.dropdown form {
+    margin: 0;
+}
+
+/* ==========================================================
+   9. CUSTOM LOGO
+   ========================================================== */
+.site-header .logo-container img {
+    max-height: 150px !important; /* Ubah ukuran tinggi logo di sini */
+    width: auto !important;
+    height: auto !important;
+    display: block !important;
+}
+
